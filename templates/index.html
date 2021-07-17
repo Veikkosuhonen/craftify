@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<header class="d-flex flex-column flex-md-row align-items-md-center p-5">
+    <div class="pt-md-3 pb-md-4">
+      <h1 class="display-3 mt-0">Welcome to Craftify</h1>
+      <p class="">Ugazaka wagazaka ugazaka zigaziga</p>
+    </div>
+</header>
+
+<main class="bg-dark">
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Shop name</th>
+                    <th scope="col">Shop description</th>
+                    <th scope="col">Established</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shop in shops %}
+                <tr>
+                    <td>{{ shop.name }}</td>
+                    <td>{{ shop.description }}</td>
+                    <td>{{ shop.creation_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Player name</th>
+                    <th scope="col">Player id</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Shop name</th>
+                    <th scope="col">Player name</th>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Item amount</th>
+                    <th scope="col">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.shopname }}</td>
+                    <td>{{ transaction.playername }}</td>
+                    <td>{{ transaction.itemname }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Shop name</th>
+                    <th scope="col">Shop description</th>
+                    <th scope="col">Established</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shop in shops %}
+                <tr>
+                    <td>{{ shop.name }}</td>
+                    <td>{{ shop.description }}</td>
+                    <td>{{ shop.creation_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}
